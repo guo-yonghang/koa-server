@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idnex</title>
+</head>
+
+<body>
+    <h1>koa-art-template</h1>
+    <h3>{{username}}</h3>
+    {{if age >= 18}}
+    <h3>成年人</h3>
+    {{else}}
+    <h3>未成年</h3>
+    {{/if}}
+
+    <button class="submit">登录</button>
+</body>
+
+<script>
+    const submit = document.querySelector('.submit')
+
+    submit.addEventListener('click', function () {
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: 'guoyonghang',
+                age: 18
+            })
+        })
+    })
+
+</script>
+
+</html>
